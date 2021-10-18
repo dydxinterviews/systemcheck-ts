@@ -1,0 +1,57 @@
+{
+  "name": "systemCheck",
+  "version": "0.0.1",
+  "description": "Verify everything is setup properly",
+  "main": "build/src/index.js",
+  "scripts": {
+    "build": "rm -rf build/ && npm run compile",
+    "compile": "tsc",
+    "compile:watch": "npm run compile -- --watch",
+    "compose-clean": "docker-compose rm -f",
+    "coverage": "npm run test -- --coverage",
+    "dev": "NODE_ENV=development nodemon -e .js -w build --exec npm start",
+    "fix": "npm run lint -- --fix",
+    "lint": "tslint --project . -t verbose 'src/**/*.ts' '__tests__/**/*.ts'",
+    "start": "node -r dotenv-flow/config .",
+    "test": "TZ=UTC NODE_ENV=test npm run build && jest --runInBand --forceExit",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dydxprotocol/systemCheck.git"
+  },
+  "author": "dYdX",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dydxprotocol/systemCheck/issues"
+  },
+  "homepage": "https://github.com/dydxprotocol/systemCheck#readme",
+  "dependencies": {
+    "@bugsnag/js": "^7.3.3",
+    "@bugsnag/plugin-express": "^7.3.3",
+    "aws-sdk": "2.493.0",
+    "axios": "^0.24.0",
+    "bignumber.js": "9.0.1",
+    "dotenv-flow": "^3.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "hot-shots": "^7.8.0",
+    "lodash": "^4.17.11",
+    "nocache": "^2.1.0",
+    "reflect-metadata": "^0.1.13",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@dydxprotocol/node-service-base-dev": "0.2.5",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.1",
+    "jest": "^24.9.0",
+    "sequelize-typescript": "^0.6.11",
+    "supertest": "^6.1.2",
+    "ts-jest": "^25.3.1",
+    "tslint": "^6.1.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-no-focused-test": "^0.5.0",
+    "typescript": "^4.5.2"
+  }
+}
