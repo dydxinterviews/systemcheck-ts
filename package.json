@@ -41,7 +41,7 @@
     "express": "^4.17.1",
     "express-request-id": "^1.4.1",
     "express-validator": "^6.7.0",
-    "ffi-napi": "^3.1.0",
+    "ffi-napi": "^4.0.1",
     "kafkajs": "^1.15.0",
     "lodash": "^4.17.21",
     "mailchimp-api-v3": "^1.12.0",
