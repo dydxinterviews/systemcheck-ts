@@ -27,9 +27,25 @@ Create the pull request on github.com from your branch to master
 
 ## Editor
 
-Pick a text editor you are comfortable with. Most editors should have javascript support. Many engineers at dYdX use [VSCode](https://code.visualstudio.com/) or [Atom](https://atom.io/).
+Pick a text editor you are comfortable with. Most editors should have javascript support. Many engineers at dYdX use [VSCode](https://code.visualstudio.com) or [Atom](https://atom.io).
+
+## Node
+
+Many dYdX services are written in NodeJs with Typescript. When installing node a version of npm will come with it. To get the latest version of npm run:
+```npm install -g npm@latest```
+
+To install all packages needed for the repo, run:
+```npm i```
+
+Set your node version to 12. NVM is a good tool for managing your node version. When installing nvm you will need to use an install script. To change to node version 12 run:
+```nvm use 12```
+
+## Docker
+
+We use docker locally to support running tests against a realistic environment, with (e.g.) postgres and redis running in dockerized containers. You’ll need to [download](https://www.docker.com/get-started) and start docker locally, as well as install [docker-compose](https://docs.docker.com/compose/install).
 
 ## Running Tests
+
 * Run all commands from the root directory of the repository.
 * In one terminal run `npm run compile:watch`. This will allow for continual building as you make changes to files.
 * In a second terminal run `docker-compose up`. This will bring up an instance of redis, postgres and kafka locally to be used in tests.
