@@ -10,15 +10,19 @@ git clone https://github.com/dydxprotocol/systemCheck.git
 ```
 
 Create a new branch locally
+
 `git checkout -b <branch_name>`
 
 Stage files to be committed
+
 `git add <file_names>`
 
 Add a commit with a message
+
 `git commit -m "<message>"`
 
 Push to the remote branch
+
 `git push origin <branch_name>`
 
 Create the pull request on github.com from your branch to master
@@ -32,12 +36,15 @@ Pick a text editor you are comfortable with. Most editors should have javascript
 ## Node
 
 Many dYdX services are written in NodeJs with Typescript. When installing node a version of npm will come with it. To get the latest version of npm run:
+
 ```npm install -g npm@latest```
 
 To install all packages needed for the repo, run:
+
 ```npm i```
 
 Set your node version to 12. NVM is a good tool for managing your node version. When installing nvm you will need to use an install script. To change to node version 12 run:
+
 ```nvm use 12```
 
 ## Docker
