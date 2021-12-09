@@ -2,15 +2,6 @@
 
 The goal of this repository is to verify that your development environment is set up to start working on code at dYdX. Successfully running the tests in this repo confirms that your environment is close to or completely set up to work with dYdX repositories.
 
-
-
-To run tests:
-* First, to import all libraries needed for these tests (as well as many needed for our actual services) run `npm i`.
-* In a new terminal window run `npm run compile:watch`. This will begin continuously building this repository in order to keep the code being tested against up to date.
-* In a new terminal window run `docker-compose up`. This will bring up an instance of redis, postgres and kafka locally to be used in tests.
-* Run `npm run test`. The tests we wrote for this repository are very simple, but verify that redis and postgres are running properly and are evidence that you have successfully set up your environment to work on code at dYdX.
-
-
 ## Git
 Clone the repository with one of the following
 ```
@@ -33,3 +24,13 @@ Push to the remote branch
 Create the pull request on github.com from your branch to master
 
 [Here](http://guides.beanstalkapp.com/version-control/common-git-commands.html) is a list of helpful git commands.
+
+## Editor
+
+Pick a text editor you are comfortable with. Most editors should have javascript support. Many engineers at dYdX use [VSCode](https://code.visualstudio.com/) or [Atom](https://atom.io/).
+
+## Running Tests
+* Run all commands from the root directory of the repository.
+* In one terminal run `npm run compile:watch`. This will allow for continual building as you make changes to files.
+* In a second terminal run `docker-compose up`. This will bring up an instance of redis, postgres and kafka locally to be used in tests.
+* In a third terminal run your tests with `npm run test`. You can add a test filename as an optional argument if you don’t want to run the whole test suite. This command pattern matches for all files with .test.ts so you don’t need to include the entire path, for example `npm test -- __tests__/basicFlowTests`.
