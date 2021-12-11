@@ -57,3 +57,9 @@ We use docker locally to support running tests against a realistic environment, 
 * In one terminal run `npm run compile:watch`. This will allow for continual building as you make changes to files.
 * In a second terminal run `docker-compose up`. This will bring up an instance of redis, postgres and kafka locally to be used in tests.
 * In a third terminal run your tests with `npm run test`. You can add a test filename as an optional argument if you don’t want to run the whole test suite. This command pattern matches for all files with .test.ts so you don’t need to include the entire path, for example `npm test -- __tests__/basicFlowTests`.
+
+## Additional Links
+
+* [Asynchronous handling in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+* [Promises in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+* [Jest](https://jestjs.io/docs/api)
