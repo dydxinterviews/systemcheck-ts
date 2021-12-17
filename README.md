@@ -1,6 +1,7 @@
 <p align='center'><img src='https://dydx.exchange/logo.svg' width='256' /></p>
 
 The goal of this repository is to verify that your development environment is set up to start working on code at dYdX. Successfully running the tests in this repo confirms that your environment is close to or completely set up to work with dYdX repositories.
+We also provide examples of common Typescript types you will encounter at dYdX in `src/types`. These objects are then used and tested in `__tests__/basicFlowTests`.
 
 ## Git
 Clone the repository with one of the following
@@ -47,16 +48,11 @@ Set your node version to 12. NVM is a good tool for managing your node version. 
 
 ```nvm use 12```
 
-## Docker
-
-We use docker locally to support running tests against a realistic environment, with (e.g.) postgres and redis running in dockerized containers. You’ll need to [download](https://www.docker.com/get-started) and start docker locally, as well as install [docker-compose](https://docs.docker.com/compose/install).
-
 ## Running Tests
 
 * Run all commands from the root directory of the repository.
 * In one terminal run `npm run compile:watch`. This will allow for continual building as you make changes to files.
-* In a second terminal run `docker-compose up`. This will bring up an instance of redis, postgres and kafka locally to be used in tests.
-* In a third terminal run your tests with `npm run test`. You can add a test filename as an optional argument if you don’t want to run the whole test suite. This command pattern matches for all files with .test.ts so you don’t need to include the entire path, for example `npm test -- __tests__/basicFlowTests`.
+* In a second terminal run your tests with `npm run test`. You can add a test filename as an optional argument if you don’t want to run the whole test suite. This command pattern matches for all files with .test.ts so you don’t need to include the entire path, for example `npm test -- __tests__/basicFlowTests`.
 
 ## Additional Links
 

@@ -1,25 +1,31 @@
-import { knexPrimary } from '../src/db/knexfile';
-import { createRedisClient, getAsync, setAsync } from '../src/db/redis';
-
-const res = createRedisClient('redis://localhost:6382', 500);
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const redis: any = res?.client;
-export const connect = res?.connect;
+import { Market, MarketInformation } from '../src/types';
 
 describe('tests', () => {
-  it('test postgres connection', async () => {
-    const queryDB = await knexPrimary.raw('select * from pg_indexes');
-    expect(queryDB).not.toEqual(null);
-  });
+  it('basic test', async () => {
+    const btcInformation: MarketInformation = {
+      market: Market.BTC_USD,
+      creationDate: ' 2021-12-17T23:00:00.000Z',
+      exchangePrices: {
+        coinbase: {
+          lastPrice: 49000,
+          marketId: '1',
+        },
+        ftx: {
+          lastPrice: 49800,
+          marketId: '2',
+        },
+      },
+    };
 
-  it('test redis', async () => {
-    await setAsync({
-      key: 'key',
-      value: 'value',
-    }, redis);
+    expect(btcInformation.market).toEqual(Market.BTC_USD);
+    expect(btcInformation.exchangePrices.coinbase.lastPrice).toEqual(49000);
 
-    const val: string | null = await getAsync('key', redis);
-    expect(val).toEqual('value');
+    // iterating over the keys of the exchangePrices
+    Object.keys(btcInformation.exchangePrices).forEach((exchange: string) => {
+      expect([
+        'coinbase',
+        'ftx',
+      ].includes(exchange));
+    });
   });
 });
