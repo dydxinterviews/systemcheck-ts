@@ -7,6 +7,7 @@ export enum Market {
   BTC_USD = 'BTC-USD',
   ETH_USD = 'ETH-USD',
   SOL_USD = 'SOL-USD',
+  BTC_ETH = 'BTC-ETH',
 }
 
 // This is an example of a hashMap as dYdX uses them.
