@@ -3,11 +3,14 @@
 The goal of this repository is to verify that your development environment is set up to start working on code at dYdX. Successfully running the tests in this repo confirms that your environment is close to or completely set up to work with dYdX repositories.
 We also provide examples of common Typescript types you will encounter at dYdX in `src/types`. These objects are then used and tested in `__tests__/basicFlowTests`.
 
+## SSH Key
+
+Setup your ssh key be able to clone the repository by following the instructions [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac)
+
 ## Git
 Clone the repository with one of the following
 ```
 git clone git@github.com:dydxprotocol/systemCheck.git
-git clone https://github.com/dydxprotocol/systemCheck.git
 ```
 
 Create a new branch locally
